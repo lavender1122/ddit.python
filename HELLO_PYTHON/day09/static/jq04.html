@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.ltt{
+	height:20px;
+}
+</style>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 제이쿼리
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
+	function myclick() {
+		const arr= [parseInt(Math.ceil(Math.random()*44))];
+		
+		console.log(arr)
+		
+		for(var i = 0;i<1000;i++){
+		var rnd = parseInt(Math.random()*45);
+		var a= arr[0];
+		arr[0]= arr[rnd];
+		arr[rnd]=a;
+		}
+		
+		$('.ltt').eq(0).html(arr[0]);
+		$('.ltt').eq(1).html(arr[1]);
+		$('.ltt').eq(2).html(arr[2]);
+		$('.ltt').eq(3).html(arr[3]);
+		$('.ltt').eq(4).html(arr[4]);
+		$('.ltt').eq(5).html(arr[5]);
+	}
+</script>
+</head>
+<body>
+	JQ04
+	<br>
+	<table border="1">
+		<tr>
+			<td><span class="ltt">__</span></td>
+			<td><span class="ltt">__</span></td>
+			<td><span class="ltt">__</span></td>
+			<td><span class="ltt">__</span></td>
+			<td><span class="ltt">__</span></td>
+			<td><span class="ltt">__</span></td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<input type="button" value ="로또생성하기" id="btn">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

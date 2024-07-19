@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn_click() {
+// 	var obj_span = document.getElementById("my_span");
+// 		console.log(obj_span);
+	
+//내가 한것
+ 		let selected_spans = document.querySelector('#my_span');
+		console.log(selected_spans.innerText)
+		console.log(selected_spans.innerHTML)
+		if (selected_spans.innerText != 'Good Evening') {
+			selected_spans.innerHTML = 'Good Evening'
+		}else{
+		selected_spans.innerHTML = 'Good Morning'
+		} 
+
+
+	}
+</script>
+</head>
+<body>
+	EX01
+	<br>
+	<span id="my_span">Good Morning</span>
+	<input type="button" value="click" onclick="fn_click()">
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	text-align:center;
+}
+#it{
+text-align:right;
+}
+</style>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 제이쿼리
+	$(".ib").on("click", function(event) {  
+		myclick(this);
+// 		console.log(this)
+	});
+	$(".ib_call").on("click", function(event) {  
+		mycall();
+	});
+});
+	function myclick(obj) {
+		var str_new=$(obj).val();
+		var str_old=$("#it").val();
+		$("#it").val(str_old+str_new)
+	}
+function mycall(){
+	var str_tel = $("#it").val();
+	
+	alert("calling\n"+str_tel);
+}
+</script>
+</head>
+<body>
+	JQ06
+	<br>
+	<table border="1">
+		<tr>
+			<td colspan="3">
+				<input type = "text" id ="it">
+			</td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="1"></td>
+			<td><input type = "button" class ="ib" value="2"  ></td>
+			<td><input type = "button" class ="ib" value="3" ></td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="4" ></td>
+			<td><input type = "button" class ="ib" value="5" ></td>
+			<td><input type = "button" class ="ib" value="6"  ></td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="7" ></td>
+			<td><input type = "button" class ="ib" value="8" ></td>
+			<td><input type = "button" class ="ib" value="9"  ></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="ib" value="0"></td>
+			<td colspan="2"><input type="button" class="ib_call" value="call"></td>
+		</tr>
+	</table>
+</body>
+</html>

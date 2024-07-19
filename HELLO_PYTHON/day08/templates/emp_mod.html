@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fn_mod_act(){
+	document.frm.submit();
+}
+</script>
+</head>
+<style>
+ table{ border-collapse : collapse; }  /*이중선 제거*/
+ th,td{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #000;
+      
+      vertical-align: top;	/* 위 */
+      vertical-align: bottom;   /* 아래 */
+      vertical-align: middle;   /* 가운데 */
+    }
+  </style>
+<body>
+EMP mod <br>
+<form name="frm" action="emp_mod_act" method="post">
+<table border='1'>
+	<tr>
+		<th>사번</th>
+		<td>
+		<input type="type" name ="e_id" value="{{vo.e_id}}">
+		</td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td>
+		<input type="type" name ="e_name" value="{{vo.e_name}}">
+		</td>
+	</tr>
+	<tr>
+		<th>gen</th>
+		<td>
+		<input type="type" name ="gen" value="{{vo.gen}}">
+		</td>
+	</tr>
+	<tr>
+		<th>addr</th>
+		<td>
+		<input type="type" name ="addr" value="{{vo.addr}}">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type = "button" value ="저장" onclick = "fn_mod_act()">
+		</td>
+	</tr>
+</table>
+	</form>
+</body>
+</html>

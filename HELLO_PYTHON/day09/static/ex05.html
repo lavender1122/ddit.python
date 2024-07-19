@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.ltt{
+	height:20px;
+}
+</style>
+<script type="text/javascript">
+	function myClick() {
+		var obj_com = document.querySelector('#div_com');
+		var obj_result = document.querySelector('#div_result');
+		
+	
+		var com="";
+		var mine = document.querySelector('input[name=rd_mine]:checked').value;
+		var result="";
+		
+		var rnd =Math.random();
+		
+		if(rnd> 0.66) {
+		  com = "가위";
+		}
+		else if(rnd> 0.33) {
+			com = "바위";
+		}
+		else{
+			com = "보";
+		}
+		
+		console.log(com,mine,result);
+		console.log(obj_result);
+		
+	    if (mine == com)  result="비김";
+	    
+	    if (com == "가위" && mine =="바위" ) result = "짐";
+	    if (com == "가위" && mine =="보"  ) result = "이김";
+	    
+	    if (com == "바위" && mine =="가위" ) result="짐";
+	    if (com == "바위" && mine =="보" ) result="이김";
+	    
+	    if (com == "보" && mine =="가위" ) result="이김";
+	    if (com == "보" && mine =="바위" ) result="짐";
+	
+
+    
+    	obj_com.innerHTML = com;
+        obj_result.innerHTML = result;
+        	
+	}
+</script>
+</head>
+<body>
+	EX05
+	<br>
+	<table border="1">
+		<tr>
+			<td>나:</td>
+			<td>
+				<input type="radio" name = "rd_mine" value="가위"/>가위	
+				<input type="radio" name = "rd_mine" value="바위"/>바위	
+				<input type="radio" name = "rd_mine" value="보"/>보	
+			</td>
+		</tr>
+		<tr>
+			<td>컴:</td>
+			<td>
+				<div id="div_com"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>결과:</td>
+			<td>
+				<div id="div_result"></div>
+			</td>
+		</tr>
+		<tr>
+			<td calspan="2">
+				<input type="button" value="게임하기" onclick="myClick()">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

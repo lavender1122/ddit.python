@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+function fn_sync(){
+// 	console.log('sync')
+	var a=1;
+	var b=2;
+	var sum = a+b
+	console.log("sync sum>>",sum);
+}
+async function fn_async(){
+// 	console.log('async')
+	var a=0;
+	var b=0;
+	
+	var res = await axios.post("/get1");
+	a=res.data.num;
+	console.log("a>>",a);
+	var res = await axios.post("/get2");
+	b=res.data.num;
+	console.log("b>>",b);
+	
+	var sum = a+b;
+	console.log("sum>>",sum);
+}
+</script>
+</head>
+<body > <!-- body 요소 준비 다 되면 fn_list() 바로 실행 --> 
+ASYNC_await<br>
+<a href="javascript:fn_sync()">sync</a>
+<a href="javascript:fn_async()">async</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var cnt = {{cnt}}; //에러 아님
+if(cnt>0){
+	alert("정상적으로 삭제었습니다.");
+	location.href="emp_list";
+}else{
+	alert("삭제도중 문제가 생겼습니다.");
+	history.back(); //수정한 페이지로 이동 (파라미터도 같음)
+}
+</script>
+</head>
+<body>
+EMP DEL ACT <br>
+{{cnt}}
+</body>
+</html>

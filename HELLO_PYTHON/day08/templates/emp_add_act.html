@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var cnt = {{cnt}};
+if(cnt >0){
+	alert("정상적으로 추가 되었습니다.");
+	location.href="emp_list";
+}else{
+	alert("추가 도중 문제가 생겼습니다.")
+	history.back();// 추가 페이지로 이동
+}
+</script>
+</head>
+<body>
+EMP ADD ACT HTML <br>
+{{cnt}}
+</body>
+</html>

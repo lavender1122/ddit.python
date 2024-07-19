@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it{
+   width: 40px;
+}
+#my_div{
+   height: 300px;
+}
+</style>
+<script type="text/javascript">
+//com 전역변수
+var com = 0;
+
+function myclick(){
+   var obj_it = document.getElementById("it");
+   var obj_div = document.getElementById("my_div");
+   
+   var mine = obj_it.value;
+   var imine = parseInt(mine);
+   
+   var line = "";
+   
+   if(com > imine) {
+      line = imine + "\tUP<br>";
+   } else if(com < imine) {
+      line = imine + "\tDOWN<br>";
+   } else {
+      line = imine + "\tANSWER<br>";
+      alert(mine + " : 정답");
+   }
+   
+   var str_old = obj_div.innerHTML;
+   console.log('obj_div.innerHTML',str_old);
+   console.log('line: ',line);
+   obj_div.innerHTML = str_old + line;
+   obj_it.value = "";
+}
+
+function ranCom(){
+   com = parseInt(Math.random()*99)+1;
+   console.log("com : " + com);
+}
+</script>
+</head>
+<!-- onload: html 로딩이 끝난 후 시작 화면에 바로 적용 -->
+<body onload="ranCom()"> 
+EX07<br>
+<table border="1px">
+   <tr>
+      <td>맞출수:</td>
+      <td>
+         <input type="text" id="it">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+         <input type="button" value="맞춰보기" onclick="myclick()">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+         <div id="my_div"></div>
+      </td>
+   </tr>
+   
+</table>
+</body>
+</html>

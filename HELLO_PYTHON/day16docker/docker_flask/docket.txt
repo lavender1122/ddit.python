@@ -1,0 +1,15 @@
+//이미지 생성
+docker build -t my-mysql-image .
+//컨테이너 설치
+docker run -d --name my-mysql-container -p 3306:3306 my-mysql-image
+
+
+
+docker pull mysql
+docker images
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=python -d -p 3306:3306 mysql:latest
+
+docker build -t flask-app .
+docker run -d -p 5000:5000 flask-app
+
+docker run -d --name flask-app-container -p 5000:5000 flask-app

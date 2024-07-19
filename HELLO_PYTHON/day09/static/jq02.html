@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 제이쿼리
+	$("#btn").on("click", function(event) {  
+		myclick();
+		console.log(event)
+	});
+});
+	function myclick() {
+		let num =document.querySelector('.it');
+		console.log(num)
+		let dounum =parseInt(num.value)*2
+		console.log(dounum)
+// 		num.value =dounum
+		
+		$('.it').val(dounum)
+	}
+</script>
+</head>
+<body>
+	jq02 
+	<br>
+	<input class="it" type="text" value="100"> 
+	<input type="button" value="DOUBLE" id="btn" > 
+</body>
+</html>

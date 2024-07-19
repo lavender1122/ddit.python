@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it{
+   width: 40px;
+}
+#my_div{
+   height: 300px;
+}
+</style>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+var com = 50;
+
+function myclick(){
+   
+   var mine = $('#it').val();
+   console.log(mine)
+   var imine = parseInt(mine);
+   
+   var line = "";
+   
+   if(com > imine) {
+      line = imine + "\tUP<br>";
+   } else if(com < imine) {
+      line = imine + "\tDOWN<br>";
+   } else {
+      line = imine + "\tANSWER<br>";
+      alert(mine + " : 정답");
+   }
+   
+//    var str_old = obj_div.innerHTML;
+   var str_old = $('#my_div').html();
+//    obj_div.innerHTML = str_old + line;
+   $('#my_div').html(str_old + line);
+   $('#it').val("");
+}
+
+function ranCom(){
+   com = parseInt(Math.random()*99)+1;
+   console.log("com : " + com);
+}
+$(document).ready(function(){
+	// 제이쿼리
+	$("#btn").on("click", function(event) {  
+		myclick(this);
+// 		console.log(this)
+	});
+});
+</script>
+</head>
+<body>
+jq07<br>
+<table border="1px">
+   <tr>
+      <td>맞출수:</td>
+      <td>
+         <input type="text" id="it">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+         <input type="button" value="맞춰보기" id="btn">
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+         <div id="my_div"></div>
+      </td>
+   </tr>
+   
+</table>
+</body>
+</html>

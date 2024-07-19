@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	text-align:center;
+}
+#it{
+text-align:right;
+}
+</style>
+<script type="text/javascript">
+	function myClick(obj) {
+// 		console.log("this",obj);
+// 		console.log("obj",obj.value);
+		
+		var obj_it = document.getElementById("it");
+		
+		var str_old=obj_it.value;
+		console.log("obj_it.value >> ",str_old);
+		var str_new=obj.value;
+		console.log("obj.value >> ",str_new);
+		obj_it.value=str_old+str_new;
+	}
+function mycall(){
+	var obj_it = document.getElementById("it");
+	var str_tel = obj_it.value;
+	
+	alert("calling\n"+str_tel);
+}
+</script>
+</head>
+<body>
+	EX06
+	<br>
+	<table border="1">
+		<tr>
+			<td colspan="3">
+				<input type = "text" id ="it">
+			</td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="1" onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="2"  onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="3"  onclick="myClick(this)"></td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="4"  onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="5"  onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="6" onclick="myClick(this)" ></td>
+		</tr>
+		<tr>
+			<td><input type = "button" class ="ib" value="7"  onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="8" onclick="myClick(this)"></td>
+			<td><input type = "button" class ="ib" value="9"  onclick="myClick(this)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="ib" value="0"onclick="myClick(this)"></td>
+			<td colspan="2"><input type="button" class="ib_call" value="call" onclick="mycall()"></td>
+		</tr>
+	</table>
+</body>
+</html>

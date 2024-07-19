@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+ table{ border-collapse : collapse; }  /*이중선 제거*/
+ th,td{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #000;
+      
+      vertical-align: top;	/* 위 */
+      vertical-align: bottom;   /* 아래 */
+      vertical-align: middle;   /* 가운데 */
+    }
+  </style>
+<body>
+EMP HTML <br>
+<p>for문 안할경우 :{{mylist}}</p>
+<table border='1'>
+	<tr>
+		<th>아이디</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>주소</th>
+	</tr>
+		{% for i in mylist %}
+	<tr>
+		<a href="#">
+		<td>{{i.e_id}}</td>
+		</a>
+		<td>{{i.e_name}}</td>
+		<td>{{i.gen}}</td>
+		<td>{{i.addr}}</td>
+	</tr>
+		{%endfor%}
+</table>
+</body>
+</html>

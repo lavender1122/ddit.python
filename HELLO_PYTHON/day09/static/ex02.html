@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myclick() {
+		let num =document.querySelector('.it');
+		console.log(num.value)
+		let dounum =parseInt(num.value)*2
+		console.log(dounum)
+		num.value =dounum
+	}
+</script>
+</head>
+<body>
+	EX02 
+	<br>
+	<input class="it" type="text" value="100"> 
+	<input type="button" value="DOUBLE" onclick="myclick()"> 
+</body>
+</html>
